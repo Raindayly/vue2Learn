@@ -1,8 +1,7 @@
-<<<<<<< HEAD
+
 # vue2Learn
 ## 自己学习vue2的时候测试使用
-=======
-# vue2learn
+
 
 ## Project setup
 ```
@@ -25,5 +24,4 @@ npm run lint
 ```
 
 ### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
->>>>>>> master
+
