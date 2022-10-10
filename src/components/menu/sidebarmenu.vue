@@ -6,7 +6,7 @@
                         list
                     </template>
                     <MenuItem name="1-1" to="/content_list">文章内容</MenuItem>
-                    <MenuItem name="1-2">评论管理</MenuItem>
+                    <MenuItem name="1-2" to="/tabs_tab">标签页</MenuItem>
                     <MenuItem name="1-3">举报管理</MenuItem>
                 </Submenu>
                 <Submenu name="2">
