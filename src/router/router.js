@@ -2,11 +2,12 @@
 const homeRoute = {
   path:"/",
   name:"main",
-  component:import("@/views/Main.vue"),
+  redirect:"/home",
+  component:()=>import("@/views/Main"),
   children:[{
     path:"home",
     name:"home",
-    component:import("@/views/View1.vue")
+    component:()=>import("@/views/View1.vue")
   }]
 }
 
