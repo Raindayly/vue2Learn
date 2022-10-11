@@ -1,12 +1,10 @@
 <template>
   <div class="container-main-main">
-    <div>
+    <div class="sidebarmenu">
       <Sidebarmenu></Sidebarmenu>
-
     </div>
-    <div>
+    <div class="main-center">
       <h1>view组件训练场</h1>
-
       <router-view></router-view>
     </div>
 
@@ -25,4 +23,11 @@ export default {
     display: flex;
     
   }
+  .main-center{
+      width: calc(100vw - 240px);
+
+  }
+  /* .sidebarmenu{
+      flex-basis: 30%;
+  } */
 </style>
