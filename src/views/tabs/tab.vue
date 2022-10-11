@@ -9,19 +9,19 @@
 </template>
 <script>
 export default {
-    data () {
-            return {
-                tabs: 2
-            }
-        },
-        methods: {
-            handleTabsAdd () {
-                this.tabs ++;
-            },
-            handleTabsReduce () {
-                this.tabs --;
-            }
+    data() {
+        return {
+            tabs: 2
         }
+    },
+    methods: {
+        handleTabsAdd() {
+            this.tabs++;
+        },
+        handleTabsReduce() {
+            this.tabs--;
+        }
+    }
 }
 </script>
 <style lang="">
