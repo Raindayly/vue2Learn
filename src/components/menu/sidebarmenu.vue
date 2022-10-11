@@ -5,10 +5,10 @@
                         <Icon type="ios-paper" />
                         list
                     </template>
-                    <MenuItem name="1-1" to="/content_list">文章内容</MenuItem>
-                    <MenuItem name="1-2" to="/tabs_tab">标签页</MenuItem>
-                    <MenuItem name="1-3" to="/excel">excel导入导出</MenuItem>
-                    <MenuItem name="1-4" to="/tree">树</MenuItem>
+                    <MenuItem name="1-1" @click.native="routerPush('/content_list')">文章内容</MenuItem>
+                    <MenuItem name="1-2" @click.native="routerPush('/tabs_tab')">标签页</MenuItem>
+                    <MenuItem name="1-3" @click.native="routerPush('/excel')">excel导入导出</MenuItem>
+                    <MenuItem name="1-4" @click.native="routerPush('/tree')">树</MenuItem>
                 </Submenu>
                 <Submenu name="2">
                     <template slot="title">
@@ -37,7 +37,12 @@
 </template>
 <script>
 export default {
-    
+    methods:{
+        routerPush(path){
+            if(path == this.$route.fullPath) return
+            this.$router.push(path)
+        }
+    }
 }
 </script>
 <style lang="">

@@ -4,9 +4,10 @@
 <template>
     <div>
         <div class="container-tree">
-            <Tree :data="data1"></Tree>
+            <Tree :data="data1" @on-select-change="test1"></Tree>
             <Card style="width: 720px; height: 420px">
                 <h1>这是普通的树模板</h1>
+                <h2>当前选择的节点title为:{{ data1title }}</h2>
             </Card>
         </div>
         <!-- 可选择提交数据的树 -->
@@ -88,12 +89,20 @@
                         ]
                     }
                 ],
+                data1title:"",
                 data2TitleList:[]
 
             };
 
         },
         methods: {
+            test1(a)
+            {   
+                if(a.length===0){
+                    return
+                }
+                this.data1title = a[0].title
+            },
             test2(a) {
                 this.data2TitleList = []
                 a.forEach(element => {
