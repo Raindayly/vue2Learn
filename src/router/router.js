@@ -16,6 +16,10 @@ const homeRoute = {
     path:"tabs_tab",
     name: "tabs_tab",
     component: () => import("@/views/tabs/tab.vue")
+  },{
+    path:"excel",
+    name: "excel",
+    component: () => import("@/views/excel/excel.vue")
   }]
 }
 
