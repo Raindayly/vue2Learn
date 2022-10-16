@@ -34,6 +34,11 @@ const homeRoute = {
       path: "watch_list",
       name: "watch_list",
       component: () => import("@/views/supervision/watchList/watchList")
+    },
+    {
+      path: "bibao",
+      name: "bibao",
+      component: () => import("@/views/function/bibao")
     }
   ]
 }
