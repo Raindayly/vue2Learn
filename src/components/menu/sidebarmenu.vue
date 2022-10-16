@@ -31,6 +31,19 @@
                         <MenuItem name="3-5">流失用户</MenuItem>
                     </MenuGroup>
                 </Submenu>
+                <Submenu name="4">
+                    <template slot="title">
+                        <Icon type="ios-stats" />
+                        测试
+                    </template>
+                        <MenuItem name="3-1" @click.native="routerPush('/file')">文件创建</MenuItem>
+                        <MenuItem name="3-2">活跃分析</MenuItem>
+                        <MenuItem name="3-3">时段分析</MenuItem>
+                    <MenuGroup title="留存">
+                        <MenuItem name="3-4">用户留存</MenuItem>
+                        <MenuItem name="3-5">流失用户</MenuItem>
+                    </MenuGroup>
+                </Submenu>
             </Menu>
 </template>
 <script>

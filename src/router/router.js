@@ -39,6 +39,11 @@ const homeRoute = {
       path: "bibao",
       name: "bibao",
       component: () => import("@/views/function/bibao")
+    },
+    {
+      path: "file",
+      name: "file",
+      component: () => import("@/views/function/file")
     }
   ]
 }
