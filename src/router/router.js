@@ -29,6 +29,16 @@ const homeRoute = {
       path: "tree",
       name: "tree",
       component: () => import("@/views/tree/tree.vue")
+    },
+    {
+      path: "watch_list",
+      name: "watch_list",
+      component: () => import("@/views/supervision/watchList/watchList")
+    },
+    {
+      path: "bibao",
+      name: "bibao",
+      component: () => import("@/views/function/bibao")
     }
   ]
 }
