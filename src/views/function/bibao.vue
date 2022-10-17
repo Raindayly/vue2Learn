@@ -1,7 +1,23 @@
 <template lang="">
     <div>
-        <button @click="add()">添加</button>
+        <button @click="addModal">添加</button>
+        <!-- <button @click="add()">确认添加</button> -->
         <Tree :data="list2" :render="renderContent" class="demo-tree-render" show-checkbox  @on-select-change="onSelectChange"></Tree>
+        <Modal
+            v-model="treeAddModel"
+            title="Common Modal dialog box title"
+            @on-ok="ok"
+        >
+        
+        <Form :model="addForm" label-position="left" :label-width="100">
+        <FormItem label="id">
+            <Input v-model="addForm.id"></Input>
+        </FormItem>
+        <FormItem label="Title">
+            <Input v-model="addForm.title"></Input>
+        </FormItem>
+    </Form>
+    </Modal>
     </div>
 </template>
 <script>
@@ -13,7 +29,21 @@ export default {
                 title: "",
                 children: []
             },
-            addForm: {},
+            treeAddModel:false,
+
+            //判读是否为子节点增加
+            isChildAdd:true,
+
+            //暂存节点信息
+            tempdata:{},
+
+
+            addForm: {
+                id: "",
+                title: "",
+                expand:true,
+                children: []
+            },
             list2: [
                 
             ],
@@ -65,21 +95,35 @@ export default {
             console.log(a);
             console.log(b);
         },
-        add() {
-            let params = {
+        addModal() {
+            this.addForm = {
                 id: "",
                 title: "",
                 expand:true,
                 children: []
             }
-            this.list2.push(params)
+            this.isChildAdd = false
+            this.treeAddModel = true
+        },
+        childrenAdd(data){
+            this.tempdata = data
+            this.addForm = {
+                id: "",
+                title: "",
+                expand:true,
+                children: []
+            }
+            this.isChildAdd = true
+            this.treeAddModel = true
         },
 
-        //递归添加为渲染函数
-        addRender() {
-            RenderProcess()
+        add(){
+            console.log(1);
+            this.list2.push(this.addForm)
+        },
 
-
+        ok(){
+            this.isChildAdd?this.append(this.tempdata):this.add()
         },
 
         renderContent(h, { root, node, data }) {
@@ -115,7 +159,7 @@ export default {
                             marginRight: '8px'
                         },
                         on: {
-                            click: () => { this.append(data) }
+                            click: () => { this.childrenAdd(data) }
                         }
                     }),
                     h('Button', {
@@ -130,12 +174,8 @@ export default {
             ]);
         },
         append(data) {
-            console.log(data);
             const children = data.children || [];
-            children.push({
-                title: 'appended node',
-                expand: true
-            });
+            children.push(this.addForm);
             this.$set(data, 'children', children);
         },
         remove(root, node, data) {
