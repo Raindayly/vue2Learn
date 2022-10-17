@@ -1,14 +1,19 @@
 <template lang="">
     <div>
-        <button @click="bibiaoTest(b)">闭包测试</button>
+        <button @click="bibiaoTest()">闭包测试</button>
+        <p>{{ now }}</p>
     </div>
 </template>
 <script>
 export default {
+    data(){
+        return{
+            x:1
+        }
+    },
     methods:{
-        bibiaoTest(a){
-
-            a([3,2,1])
+        bibiaoTest(){
+            this.x++
         },
         b(res){
             res.sort()
@@ -16,6 +21,11 @@ export default {
 
         }
     },
+    computed:{
+        now(){
+            return Date.now()+this.x
+        }
+    }
 
 }
 </script>

@@ -6,7 +6,6 @@
     </div>
 </template>
 <script>
-import * as fs from 'fs';
 export default {    
     data(){
         return {
@@ -15,9 +14,9 @@ export default {
     },
     
     methods:{
-        createFile(fileName){
-            fs.mkdir(fileName)
-        }
+        // createFile(fileName){
+        //     fs.mkdir(fileName)
+        // }
     },
 
 }
