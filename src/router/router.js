@@ -44,7 +44,12 @@ const homeRoute = {
       path: "file",
       name: "file",
       component: () => import("@/views/function/file")
-    }
+    },
+    {
+        path: "test",
+        name: "test",
+        component: () => import("@/views/test/test")
+      }
   ]
 }
 
