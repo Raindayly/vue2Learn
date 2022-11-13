@@ -39,6 +39,16 @@ const homeRoute = {
       path: "bibao",
       name: "bibao",
       component: () => import("@/views/function/bibao")
+    },
+    {
+      path: "selectRemote",
+      name: "selectRemote",
+      component: () => import("@/views/iview/select/selectRemote.vue")
+    },
+    {
+      path: "routeList",
+      name: "routeList",
+      component: () => import("@/views/routeList/routeList")
     }
   ]
 }
