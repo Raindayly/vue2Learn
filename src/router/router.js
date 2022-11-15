@@ -49,7 +49,13 @@ const homeRoute = {
       path: "routeList",
       name: "routeList",
       component: () => import("@/views/routeList/routeList")
+    },
+    {
+      path: "disabledate",
+      name: "禁用部分时间选择器",
+      component: () => import("@/views/iview/disable_date/disabledate.vue")
     }
+
   ]
 }
 

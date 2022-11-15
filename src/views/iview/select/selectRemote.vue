@@ -2,14 +2,17 @@
     <Row>
         <Col span="12" style="padding-right:10px">
             <Select
+                style="width:300px"
                 ref="select1"
                 v-model="model13"
+                clearable
                 filterable
                 :remote-method="remoteMethod1"
                 @on-query-change="query1Change"
                 :loading="loading1">
                 <Option v-for="(option, index) in options1" :value="option.value" :key="index">{{option.label}}</Option>
             </Select>
+            model:{{model13}} 
         </Col>
         <Col span="12">
         <Select
