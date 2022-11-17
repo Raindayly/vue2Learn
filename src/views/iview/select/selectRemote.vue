@@ -2,7 +2,7 @@
     <Row>
         <Col span="12" style="padding-right:10px">
             <Select
-                style="width:300px"
+                style="width:300px;"
                 ref="select1"
                 v-model="model13"
                 clearable

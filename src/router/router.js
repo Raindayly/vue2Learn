@@ -54,8 +54,22 @@ const homeRoute = {
       path: "disabledate",
       name: "禁用部分时间选择器",
       component: () => import("@/views/iview/disable_date/disabledate.vue")
+    },
+    {
+      path: "selTable",
+      name: "内嵌select的表格",
+      component: () => import("@/views/iview/table/selTable/index.vue")
+    },
+    {
+      path: "zcTable",
+      name: "正常表格",
+      component: () => import("@/views/iview/table/zcTable/index.vue")
+    },
+    {
+      path: "von",
+      name: "渲染函数",
+      component: () => import("@/views/hfunc/von.vue")
     }
-
   ]
 }
 

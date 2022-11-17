@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="example">
+    <p>Original message: "{{ message }}"</p>
+    <button @click="cgMsg">---</button>
+    <p>Computed reversed message: "{{ reversedMessage }}"</p>
+  </div>
+</body>
+<script type="module">
+  import Vue from './vue.js'
+  console.log(Vue);
+</script>
+<script>
+  var vm = new Vue({
+    el: '#example',
+    data: {
+      message: 'Hello'
+    },
+    methods: {
+      cgMsg() {
+        this.message = 'asdfg'
+      }
+    },
+    computed: {
+      // 计算属性的 getter
+      reversedMessage: function () {
+        // `this` 指向 vm 实例
+        console.log(1);
+        return this.message.split('').reverse().join('')
+      }
+    }
+  })
+</script>
+
+</html>
