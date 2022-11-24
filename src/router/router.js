@@ -69,6 +69,11 @@ const homeRoute = {
       path: "von",
       name: "渲染函数",
       component: () => import("@/views/hfunc/von.vue")
+    },
+    {
+      path: "vModel",
+      name: "双向绑定",
+      component: () => import("@/views/vModel/object.vue")
     }
   ]
 }
